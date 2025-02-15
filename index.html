@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - Efecto Neón</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!--iconos de redes-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- Librería de Devicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <!--FONDO DE LETRA TITULOS-->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <main>
+        <section id="sect1" class="animate__animated animate__fadeIn">
+            <div id="content-container">
+
+                <div id="text-content">
+                    <canvas id="cornerCanvas"></canvas>
+                    <canvas id="cornerCanvas2"></canvas>
+                    <h1>Alan Quintana </h1>
+                    <p>Estudiante de Ingeniería Informática</p>
+                    <div id="div1-hr">
+                        <hr>
+                    </div>
+                    <p> Apasionado por la tecnología y el desarrollo web.</p>
+                    <div id="contact">
+                        <a href="https://wa.me/527121953494" target="_blank">
+                            <i class="fa-brands fa-whatsapp"></i> <!-- WhatsApp (FontAwesome) -->
+                        </a>
+                        <a href="mailto:quintannaalan@gmail.com" target="_blank">
+                            <i class="devicon-google-plain"></i> <!-- Alternativa para Email -->
+                        </a>
+                        <a href="https://www.linkedin.com/in/quintana-alan/" target="_blank">
+                            <i class="devicon-linkedin-plain"></i> <!-- LinkedIn (Devicon) -->
+                        </a>
+                        <a href="https://www.instagram.com/alanquinntana?igsh=MWJkcXNicWl2eXBlaA==" target="_blank">
+                            <i class="fa-brands fa-instagram"></i> <!-- Instagram (FontAwesome) -->
+                        </a>
+                    </div>
+
+                </div>
+                <div id="canvas-container">
+                    <canvas id="uiCanvas"></canvas>
+                </div>
+            </div>
+        </section>
+        <section id="sect2" class="animate__animated animate__fadeInUp">
+            <div>
+                <h1>Habilidades</h1>
+                <div id="skills-container">
+                    <div class="skill">
+                        <i class="fab fa-html5"></i>
+                        <p>HTML</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-css3-alt"></i>
+                        <p>CSS</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-js-square"></i>
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="skill">
+                        <i class="devicon-java-plain"></i>
+                        <p>Java</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-database"></i>
+                        <p>MySQL</p>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-brain"></i> <!-- Icono de IA -->
+                        <p>IA</p>
+                    </div>
+                    <div class="skill">
+                        <i class="devicon-spring-plain"></i> <!-- Icono de Spring Boot -->
+                        <p>Spring Boot</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="sect3" class="animate__animated animate__fadeInUp">
+            <h1>Proyectos</h1>
+            <div id="projects-wrapper">
+                <!-- Lista de proyectos (lado izquierdo) -->
+                <div id="projects-list">
+                    <div class="project-item" data-project="1">
+                        <h3>Sitio web</h3>
+                        <p>se llevo acabo el desarrollo de un sito web de la materia de taller de legislación</p>
+                    </div>
+                    <div class="project-item" data-project="2">
+                        <h3>Proyecto 2</h3>
+                    </div>
+                    <!-- Más proyectos -->
+                </div>
+
+                <!-- Visualización del proyecto (lado derecho) -->
+                <div id="project-details">
+                    <div class="project-image" style="background-image: url('ruta/a/imagen1.jpg');">
+                        <div class="project-overlay">
+                            <h2>Nombre del Proyecto</h2>
+                            <a href="enlace-al-proyecto" target="_blank">Ver proyecto</a>
+                        </div>
+                    </div>
+                    <!-- Descripción detallada y habilidades -->
+                    <div class="project-info">
+                        <div class="project-description">
+                            <h2>Descripción detallada</h2>
+                            <p>Descripción detallada del proyecto.</p>
+                        </div>
+                        <div class="project-skills">
+                            <h2>Habilidades utilizadas</h2>
+                            <ul>
+                                <li><i class="fab fa-html5"></i> HTML</li>
+                                <li><i class="fab fa-css3-alt"></i> CSS</li>
+                                <li><i class="fab fa-js-square"></i> JavaScript</li>
+                                <li><i class="devicon-spring-plain"></i> Spring Boot</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </main>
+
+
+    <script>
+
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
