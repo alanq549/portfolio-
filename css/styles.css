@@ -12,7 +12,10 @@ body {
     overflow-x: hidden;
     box-sizing: border-box;
 }
-
+main{
+    width: 100%;
+    height: 100%;
+}
 #sect1{
     padding-top: 5%;
     position: relative;
@@ -43,13 +46,32 @@ pointer-events: none;
     margin-bottom: 70px;
     margin-left: 30px;
 }
+
 #text-content>h1 {
     font-size: 4.5rem;
     font-family: 'Orbitron', sans-serif;
     white-space: nowrap;
     bottom: 0%;
-    margin-bottom: 0%;
-    
+    margin-bottom: 0%; 
+}
+/* Animacion para el titulo1*/
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #333; }
+}
+
+.typewriter {
+    overflow: hidden;
+    border-right: 0.15em solid #333;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0.15em;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 #text-content>p:first-of-type{
     font-size: 1.3rem;
@@ -73,7 +95,6 @@ padding-left: 15px;
     margin-right: 60px;
 
   }
-  
 #canvas-container {
     position: relative;
     width: 600px;
@@ -114,13 +135,14 @@ padding-left: 100px;
 }
 
 #contact a:nth-of-type(1) i { 
-    background: linear-gradient(45deg, #25D366, #00ffcc);  /* WhatsApp - verde degradado */
+    background: linear-gradient(45deg,  #25D366, #00ffcc);  /* WhatsApp - verde degradado */
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     color: transparent; /* Asegura que el texto sea transparente */
-}
+    transition: background 0.3s ease-in-out, -webkit-text-fill-color 0.3s ease-in-out, color 0.3s ease-in-out;
 
+}
 
 #contact a:nth-of-type(2) i { 
     background: linear-gradient(25deg, #d4b538, #ff9900, #b1b105);  /* Gmail - amarillo anaranjado */
@@ -147,14 +169,27 @@ padding-left: 100px;
 }
 
 
-/*Seccion 2*/
-#sect2>div>h1:first-of-type{
+/* Sección 2 */
+#sect2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+}
+
+/* Estilos para el título */
+#sect2 h1 {
     font-size: 4.5rem;
     font-family: 'Orbitron', sans-serif;
+    margin-bottom: 50px;
+    opacity: 0;
+    animation-timeline: --scroll;
+    animation-range: entry 20% cover 50%;
 }
+
+/* Estilos para el contenedor de habilidades */
 #skills-container {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 20px;
     padding-top: 50px;
@@ -162,19 +197,34 @@ padding-left: 100px;
     padding-right: 100px;
     margin-bottom: 100px;
 }
+
+/* Estilos para cada skill */
 .skill {
     text-align: center;
+    margin: 20px;
+    opacity: 0;
+    animation-timeline: --scroll;
+    animation-range: entry 20% cover 50%;
+    align-content: space-around;
+
 }
+
+/* Asegúrate de que las animaciones de animate.css se apliquen correctamente */
+.animate__animated {
+    animation-fill-mode: both;
+}
+
+/* Estilos para los íconos y texto */
 .skill i {
     font-size: 3rem;
     color: #00ffcc; /* Color neón */
-    margin-bottom: 10px;
 }
+
 .skill p {
-    padding-top: 10px;
+    padding-top: 15px;
     font-size: 1.2rem;
     color: #ffffff; /* Color blanco */
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', sans-serif;    
 }
 
 /*Seccion 3*/
@@ -224,6 +274,8 @@ color: black; /* Color neón al hacer hover */
     font-size: 1.2rem;
     color: #ffffff;
     margin-bottom: 5px;
+    font-family: 'Orbitron', sans-serif;    
+
 }
 
 .project-item p {
@@ -250,6 +302,7 @@ color: black; /* Color neón al hacer hover */
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    animation: alternate;
 }
 
 .project-overlay {
@@ -267,7 +320,7 @@ color: black; /* Color neón al hacer hover */
     padding: 5px;
     box-sizing: border-box;
     opacity: 1; /* Siempre visible */
-    transition: opacity 0.5s ease;
+    transition: opacity .5s ease;
 }
 /*52 712 175 2711 */
 /* Eliminamos el hover del overlay */
@@ -280,6 +333,8 @@ color: black; /* Color neón al hacer hover */
     font-size: 2rem;
     color: #00ffcc; /* Color neón */
     margin-bottom: 10px;
+    font-family: 'Orbitron', sans-serif;    
+
 }
 
 .project-overlay p {
@@ -318,6 +373,8 @@ color: black; /* Color neón al hacer hover */
     font-size: 1.5rem;
     color: #00ffcc; /* Color neón */
     margin-bottom: 15px;
+    font-family: 'Orbitron', sans-serif;    
+
 }
 
 .project-skills ul {
@@ -363,4 +420,361 @@ color: black; /* Color neón al hacer hover */
     padding-left: 25px;
 margin-top: 0;
 
+}
+
+/* Para tablets (pantallas medianas) */
+@media (min-width: 481px) and (max-width: 768px) {
+
+    #sect1{
+        width: fit-content;
+        padding-top: 5%;
+        position: absolute;
+        padding-bottom: 10%;
+        border:  2px solid gray;
+    }
+    #cornerCanvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    margin-left: 0%;
+    pointer-events: none;
+    display: none !important;
+      }
+    #content-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0%;
+    }
+    #text-content {
+        position: relative;
+        max-width: 60%;
+        text-align: left;
+    }
+    #text-content>h1 {
+        font-size: .5rem;
+        font-family: 'Orbitron', sans-serif;
+        white-space: nowrap;
+        bottom: 0%;
+        margin-bottom: 0%; 
+    }
+}
+/* telefonos */
+@media (max-width: 768px) { 
+    main{
+        overflow-x: hidden;
+    }
+   
+canvas{
+display: none;
+  }
+  #sect1{
+    margin-top: 50px;
+    margin-bottom: 155px
+  }
+
+#content-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20%;
+    
+}
+#text-content {
+    position: relative;
+    max-width: 60%;
+    text-align: left;
+    padding-left: 0px;
+    padding-bottom: 20px;
+    margin-bottom: 70px;
+    margin-left: 0px;
+}
+#text-content>h1 {
+    font-size: 2.7rem;
+    font-family: 'Orbitron', sans-serif;
+    white-space: nowrap;
+    bottom: 0%;
+    margin-bottom: 0%;
+    padding-left: 15px; 
+}
+#text-content>p:first-of-type{
+    font-size: 1.2rem;
+margin-top: 0%;
+padding-left: 35px;
+}
+#text-content>p{
+    white-space: nowrap;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+#div1-hr{
+    margin-left: 20px;
+    padding-left: 5px;
+    width: 145%;
+
+}
+#div1-hr > hr {
+    border: none; /* Quitamos el borde */
+    height: 1px; /* Ajusta el grosor */
+    background: linear-gradient(55deg, 
+      #00ffcc,  /* Verde oscuro */
+      rgb(20, 255, 145),  /* Verde neón */
+      #00ffbf,  /* Chartreuse */
+      #00ffd0   /* Verde puro */
+    );
+    width: 100%;
+    margin-left: 2px;
+    margin-right: 0px;
+  }
+  
+#contact{
+    position: absolute;
+    width: 100%;
+    margin-top: 30px;
+    /*border-color: #ffcc00; amarillo*/
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+padding-left: 70px;
+}
+#contact>a{
+    text-decoration: none;
+    padding-left: 20px;
+}
+#contact>a{
+    font-size: 2.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Seccion 2*/
+#sect2>div>h1:first-of-type{
+    font-size: 2.7rem;
+}
+#skills-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 100px;
+    gap: 20px;
+}
+.skill {
+    text-align: center;
+}
+.skill i {
+    font-size: 3rem;
+    color: #00ffcc; /* Color neón */
+    margin-bottom: 10px;
+}
+.skill p {
+    padding-top: 10px;
+    font-size: 1.2rem;
+    font-family: 'Orbitron', sans-serif;
+}
+
+
+/*Seccion 3*/
+#sect3>h1{
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.7rem;
+}
+/* Contenedor principal */
+
+#projects-wrapper {
+    display: flex;
+    gap: 5px;
+    margin-top: 20px;
+    padding-top: 50px;
+    margin-bottom: 45px;
+    top: 0;
+    position: relative; /* Necesario para que el div3 se posicione relativamente al padre */
+
+}
+
+/* Lista de proyectos (lado izquierdo) */
+#projects-list {
+    width: 35%;
+height: 100%;
+    overflow-y: auto; /* Scroll vertical si es necesario */
+    background-color: #1e1e1e80;
+    padding: 20px;
+    border-radius: 10px;
+    position: sticky; /* Fija la lista mientras se desplaza el contenido */
+    top: 0; /* Se mantiene en la parte superior */
+}
+
+.project-item {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #414040;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.project-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.project-item p {
+    font-size: 0.9rem;
+    color: #cccccc;
+    text-align: justify;
+    display: none;
+}
+
+/* Visualización del proyecto (lado derecho) */
+#project-details {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    top: 0; /* Se mantiene en la parte superior */
+}
+
+.project-image {
+    width: 100%;
+    height: 300px; /* Altura fija para la imagen */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1e1e1e80; /* Fondo oscuro semitransparente */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2px;
+    box-sizing: border-box;
+    opacity: 1; /* Siempre visible */
+    transition: opacity 0.5s ease;
+}
+
+.project-overlay h2 {
+    font-size: 1.3rem;
+    color: #00ffcc; /* Color neón */
+    margin-bottom: 10px;
+}
+
+.project-overlay p {
+    font-size: .8rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.project-overlay a {
+    color: #00ffcc;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #00ffcc;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: .7rem;
+}
+
+.project-overlay a:hover {
+    background-color: #00ffcc;
+    color: #1e1e1e;
+}
+
+/* Habilidades del proyecto */
+.project-skills {
+    width: 80%;
+    padding-right: 0px;
+    background-color: #1e1e1e80;
+    padding: 20px;
+    border-radius: 10px;
+    align-content: center;
+    margin-left: 0px;
+    margin-right: 0px;
+    height: auto;
+margin-left: 10px;
+align-content: center;
+justify-content:center ;
+}
+
+.project-skills h2 {
+    font-size: 1.2rem;
+    color: #00ffcc; /* Color neón */
+    margin-bottom: 15px;
+}
+
+.project-skills ul {
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+
+}
+
+.project-skills li {
+    font-size: .5rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-family: 'Orbitron', sans-serif;
+    width: fit-content;
+    padding-right: 5px;
+}
+
+.project-skills i {
+    margin-right: 10px;
+    color: #00ffcc; /* Color neón */
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-left: 0px;
+    padding-bottom: 5px;
+}
+.project-info{
+    border: 2px sol;
+    position: absolute;
+    margin-top: 350px;
+    padding-left: 20px;
+    padding-right: 20px;
+    top: 0; /* Posición personalizada */
+    right: 0; /* Posición personalizada */
+
+}
+.project-description {
+    align-self: flex-start !important; /* Cambia la alineación solo para este div */
+    margin-top: 0%;
+    text-align: justify;
+    white-space: pre-line; /* Respeta los saltos de línea (\n) */
+    font-size: 1rem;
+    color: #ffffff;
+    width: 100%;
+    padding-left: 0px;
+    padding-right: 20px;
+}
+.project-description>h2{
+    font-size: 1.5rem;
+    text-align: center;
+    bottom: 0;
+    font-family: 'Orbitron', sans-serif;
+}
+.project-description>p{
+    padding-left: 0px;
+margin-top: 0;
+left: 0;
+
+}
 }

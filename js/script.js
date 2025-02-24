@@ -1,3 +1,4 @@
+
 // 📌 PRIMER CANVAS (cornerCanvas)
 const canvas = document.getElementById("cornerCanvas", "cornerCanvas2");
 const ctx = canvas.getContext("2d");

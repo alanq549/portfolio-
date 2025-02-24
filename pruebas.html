@@ -5,6 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Efecto de Esquinas Resaltadas con Canvas</title>
   <style>
+   /* Estilos base para los componentes */
+.componente {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: opacity 1s ease, transform 1s ease;
+    view-timeline: --scroll;
+    animation-timeline: --scroll;
+}
+
+/* Animación para el componente de la izquierda */
+.izq {
+    animation: fadeInLeft 1s ease forwards;
+}
+
+/* Animación para el componente de la derecha */
+.derecha {
+    transform: translateX(100%);
+    animation: fadeInRight 1s ease forwards;
+}
+
+/* Definición de la animación desde la izquierda */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Definición de la animación desde la derecha */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
     .container {
       position: relative;
       width: 300px;
@@ -36,7 +79,15 @@
     <div class="content">
       <h1>Texto o Elemento con Esquinas Resaltadas</h1>
     </div>
+    
   </div>
+  <div class="componente izq animate__animated" style="view-timeline: --scroll;">
+    <p>Este componente aparecerá desde la izquierda.</p>
+</div>
+
+<div class="componente derecha animate__animated" style="view-timeline: --scroll;">
+    <p>Este componente aparecerá desde la derecha.</p>
+</div>
   <script src="js/script.js"></script>
 
 </body>

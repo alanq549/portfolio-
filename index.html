@@ -6,30 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portafolio - Efecto Neón</title>
     <link rel="stylesheet" href="css/styles.css">
+    <!--animaciones de animate-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <!--iconos de redes-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <!-- Librería de Devicon -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    <!--FONDO DE LETRA TITULOS-->
+    <!--TIPO DE LETRA TITULOS-->
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-
     <main>
-        <section id="sect1" class="animate__animated animate__fadeIn">
+        <section id="sect1"class="animate__animated animate__fadeIn" >
             <div id="content-container">
 
                 <div id="text-content">
                     <canvas id="cornerCanvas"></canvas>
                     <canvas id="cornerCanvas2"></canvas>
-                    <h1>Alan Quintana </h1>
-                    <p>Estudiante de Ingeniería Informática</p>
+                    <h1 id="title1" class="animate__animated animate__fadeInLeft animate__delay-2.25s ">Alan Quintana </h1>
+                    <p  class="animate__animated animate__fadeInRight animate__delay-1s">Estudiante de Ingeniería Informática</p>
                     <div id="div1-hr">
                         <hr>
                     </div>
-                    <p> Apasionado por la tecnología y el desarrollo web.</p>
+                    <p class="animate__animated animate__fadeInLeft animate__delay-2s"> Apasionado por la tecnología y el desarrollo web.</p>
                     <div id="contact">
                         <a href="https://wa.me/527121953494" target="_blank">
                             <i class="fa-brands fa-whatsapp"></i> <!-- WhatsApp (FontAwesome) -->
@@ -51,36 +51,39 @@
                 </div>
             </div>
         </section>
-        <section id="sect2" class="animate__animated animate__fadeInUp">
-            <div>
-                <h1>Habilidades</h1>
+        <section id="sect2">
+            <div class="componente">
+                <h1 id="title2" class="animate__animated animate__fadeInUp" style="view-timeline: --scroll;">Habilidades</h1>
                 <div id="skills-container">
-                    <div class="skill">
+                    <!-- Skills que aparecen desde la izquierda -->
+                    <div class="skill izquierda animate__animated animate__fadeInLeft animate__delay-1.5s" style="view-timeline: --scroll;">
                         <i class="fab fa-html5"></i>
                         <p>HTML</p>
                     </div>
-                    <div class="skill">
+                    <div class="skill izquierda animate__animated animate__fadeInLeft animate__delay-2s" style="view-timeline: --scroll;">
                         <i class="fab fa-css3-alt"></i>
                         <p>CSS</p>
                     </div>
-                    <div class="skill">
+                    <div class="skill izquierda animate__animated animate__fadeInLeft animate__delay-2.5s" style="view-timeline: --scroll;">
                         <i class="fab fa-js-square"></i>
                         <p>JavaScript</p>
                     </div>
-                    <div class="skill">
+        
+                    <!-- Skills que aparecen desde la derecha -->
+                    <div class="skill derecha animate__animated animate__fadeInUp animate__delay-2.75s " style="view-timeline: --scroll;">
                         <i class="devicon-java-plain"></i>
                         <p>Java</p>
                     </div>
-                    <div class="skill">
+                    <div class="skill derecha animate__animated animate__fadeInRight animate__delay-2.5s" style="view-timeline: --scroll;">
                         <i class="fas fa-database"></i>
                         <p>MySQL</p>
                     </div>
-                    <div class="skill">
-                        <i class="fas fa-brain"></i> <!-- Icono de IA -->
+                    <div class="skill derecha animate__animated animate__fadeInRight animate__delay-2s" style="view-timeline: --scroll;">
+                        <i class="fas fa-brain"></i>
                         <p>IA</p>
                     </div>
-                    <div class="skill">
-                        <i class="devicon-spring-plain"></i> <!-- Icono de Spring Boot -->
+                    <div class="skill derecha animate__animated animate__fadeInRight animate__delay-1.5s" style="view-timeline: --scroll;">
+                        <i class="devicon-spring-plain"></i>
                         <p>Spring Boot</p>
                     </div>
                 </div>
@@ -93,14 +96,13 @@
                 <div id="projects-list">
                     <div class="project-item" data-project="1">
                         <h3>Sitio web</h3>
-                        <p>se llevo acabo el desarrollo de un sito web de la materia de taller de legislación</p>
+                        <p></p>
                     </div>
                     <div class="project-item" data-project="2">
                         <h3>Proyecto 2</h3>
                     </div>
                     <!-- Más proyectos -->
                 </div>
-
                 <!-- Visualización del proyecto (lado derecho) -->
                 <div id="project-details">
                     <div class="project-image" style="background-image: url('ruta/a/imagen1.jpg');">
@@ -126,14 +128,11 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </section>
     </main>
-
-
-    <script>
-
-    </script>
     <script src="js/script.js"></script>
+    
 </body>
 
 </html>
