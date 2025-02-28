@@ -169,6 +169,13 @@ const projectsData = [
         link: "https://alanq549.github.io/mejora-de-trabajo/",
     },
     {
+        image: "./img/crypto-dashboard.png",
+        title: "crypto-dashboard",
+        description: "", /// poner una descripcipn del proyecto 
+        skills: ["HTML", "CSS", "JavaScript", "react"],
+        link: "https://crypto-dashboard-puce.vercel.app/",/// enlace del proyecto
+    },
+    {
         image: "ruta/a/imagen2.jpg",
         title: "Proyecto 2",
         description: "", /// poner una descripcipn del proyecto 
